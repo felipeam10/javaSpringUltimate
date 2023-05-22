@@ -4,9 +4,14 @@ import examples.netSalary.entities.Employee;
 
 public class SalaryService {
 
-    //FORMA ERRADA
-    TaxService taxService = new TaxService();
-    PensionService pensionService = new PensionService();
+    //FORMA CORRETA
+    private TaxService taxService;
+    private PensionService pensionService;
+
+    public SalaryService(TaxService taxService, PensionService pensionService) {
+        this.taxService = taxService;
+        this.pensionService = pensionService;
+    }
 
     public Double netSalary(Employee employee){
         return employee.getGrossSalary()

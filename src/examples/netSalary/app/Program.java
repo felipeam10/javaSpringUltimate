@@ -1,6 +1,7 @@
 package examples.netSalary.app;
 
 import examples.netSalary.entities.Employee;
+import examples.netSalary.services.BrazilTaxService;
 import examples.netSalary.services.PensionService;
 import examples.netSalary.services.SalaryService;
 import examples.netSalary.services.TaxService;
@@ -21,7 +22,7 @@ public class Program {
 
         Employee employee = new Employee(name, grossSalary);
 
-        TaxService taxService = new TaxService();
+        TaxService taxService = new BrazilTaxService();
         PensionService pensionService = new PensionService();
 
         SalaryService salaryService = new SalaryService(taxService, pensionService);
